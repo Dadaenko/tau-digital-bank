@@ -1,5 +1,7 @@
 [![nightly build at 11pm](https://github.com/tau-github-actions-for-testing/tau-digital-bank/actions/workflows/nightly-build.yml/badge.svg)](https://github.com/tau-github-actions-for-testing/tau-digital-bank/actions/workflows/nightly-build.yml)
 
+[![run unit tests of feature branches](https://github.com/Dadaenko/tau-digital-bank/actions/workflows/run-unit-tests.yml/badge.svg)](https://github.com/Dadaenko/tau-digital-bank/actions/workflows/run-unit-tests.yml)
+
 # Digital Bank
 
 Digital Bank is a sample application that was developed for exploratory purposes to examine development frameworks and techniques. The application is an example online digital banking application with integrations into other services.
