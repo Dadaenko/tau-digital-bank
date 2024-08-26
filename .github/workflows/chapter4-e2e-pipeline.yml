@@ -61,26 +61,8 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
-        
-  cleanup:
-    needs: [build]
-    runs-on: ubuntu-latest
-    environment: UAT
-
-    steps: 
-      - name: "cleanup destination at ${{ vars.UAT_IP }}"
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ vars.UAT_IP }}
-          port: ${{ vars.UAT_PORT }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            rm -rf ./deployment/*
-           
-            
+                    
   deploy: 
-    needs: [cleanup]
     runs-on: ubuntu-latest
     environment: UAT
     
@@ -107,15 +89,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: UAT
 
-    steps: 
-      - name: "cleanup destination at ${{ vars.UAT_IP }}"
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ vars.UAT_IP }}
-          port: ${{ vars.UAT_PORT }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: cp -f /home/ec2-user/deployment/deploy/digibank.war ${{ vars.UAT_TOMCAT }}
+    steps:
           
       - name: Sleep for 10 seconds
         run: sleep 10s
