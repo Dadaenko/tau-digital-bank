@@ -100,7 +100,7 @@ jobs:
     environment: UAT
     name: Trigger E2E Tests on UAT Environment
     runs-on: ubuntu-latest
-
+ 
     steps:
       - name: Trigger Workflow from e2e tests with Playwright
         run: |
